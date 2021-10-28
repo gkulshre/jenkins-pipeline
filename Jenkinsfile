@@ -12,6 +12,7 @@ pipeline {
     stage('maven-test-env') {
       steps {
         copyArtifacts(fingerprintArtifacts: true, projectName: 'maven-build', selector: lastSuccessful())
+        deploy(adapters: [tomcat9(credentialsId: 'tomcat-web', path: '', url: 'http://13.232.126.84:8080')], contextPath: '/newapp', war: '**/*.war')
       }
     }
 
