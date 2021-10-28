@@ -17,6 +17,6 @@ pipeline {
 
   }
   options {
-    copyArtifactPermission('maven-test-env')
+    copyArtifactPermission('maven-build')
   }
 }
