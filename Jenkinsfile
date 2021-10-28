@@ -11,7 +11,7 @@ pipeline {
 
     stage('maven-test-env') {
       steps {
-        copyArtifacts 'jenkins-pipeline_main'
+        copyArtifacts 'maven-build'
       }
     }
 
