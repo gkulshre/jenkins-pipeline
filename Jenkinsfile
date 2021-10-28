@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('maven-build') {
+    stage('maven-build-new') {
       steps {
         git(url: 'https://github.com/gkulshre/war-web-project.git', branch: 'master')
         sh 'mvn package'
@@ -15,8 +15,5 @@ pipeline {
       }
     }
 
-  }
-  options {
-    copyArtifactPermission('maven-build')
   }
 }
