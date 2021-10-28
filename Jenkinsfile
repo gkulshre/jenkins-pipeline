@@ -11,7 +11,7 @@ pipeline {
 
     stage('maven-test-env') {
       steps {
-        deploy(adapters: [tomcat9(credentialsId: 'tomcat-web', path: '', url: 'http://13.127.219.52:8080')], contextPath: '/newapp-new', war: '**/*.war')
+        deploy(adapters: [tomcat9(credentialsId: 'tomcat-web', path: '', url: 'http://3.109.186.204:8080')], contextPath: '/newapp-new', war: '**/*.war')
       }
     }
 
