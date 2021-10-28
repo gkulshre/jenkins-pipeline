@@ -15,5 +15,21 @@ pipeline {
       }
     }
 
+    stage('Docker Build and Tag') {
+      steps {
+        sh 'docker build -t samplewebapp:latest .'
+        sh 'docker tag samplewebapp gkulshre/samplewebapp:latest'
+      }
+    }
+
+    stage('Publish image to Docker Hub') {
+      steps {
+        withDockerRegistry(credentialsId: 'dockerHub') {
+          sh 'docker push gkulshre/samplewebapp:latest'
+        }
+
+      }
+    }
+
   }
 }
