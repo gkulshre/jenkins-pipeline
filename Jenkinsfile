@@ -11,7 +11,7 @@ pipeline {
 
     stage('maven-test-env') {
       steps {
-        copyArtifacts(fingerprintArtifacts: true, projectName: 'jenkins-pipeline', selector: lastSuccessful())
+        copyArtifacts(fingerprintArtifacts: true, projectName: 'maven-build', selector: lastSuccessful())
       }
     }
 
